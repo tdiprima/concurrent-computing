@@ -1,0 +1,47 @@
+False
+Loaded volume from file: /home/superbear/TCGA-41-3393-01Z-00-DX1_18300_68910_600_600_GBM.png. Dimensions: 600x600x1. Number of components: 4. Pixel type: unsigned char.
+
+
+"Volume" Reader has successfully read the file "/home/superbear/TCGA-41-3393-01Z-00-DX1_18300_68910_600_600_GBM.png" "[0.28s]" 
+3
+
+
+
+vtkQuickTCGA initialized
+vtkQuickTCGA initialized
+vtkQuickTCGA initialized
+1.0   0.8   3.0   50.0   0.25   20.0
+executing segmentation...
+doing new processTile
+normalizeImageColor.....
+exponent: -0.233383
+j * 3: 0
+pow: 0.584274
+exponent: -0.289298
+j * 3 + 1: 1
+pow: 0.513691
+exponent: -0.255221
+j * 3 + 2: 2
+pow: 0.555622
+exponent: -0.249109
+j * 3: 3
+pow: 0.563496
+exponent: -0.306825
+j * 3 + 1: 4
+pow: 0.493372
+exponent: -0.269945
+j * 3 + 2: 5
+pow: 0.5371
+exponent: -0.263214
+j * 3: 6
+pow: 0.54549
+exponent: -0.31963
+j * 3 + 1: 7
+pow: 0.479038
+extractTissueMask.....
+ExtractHematoxylinChannel.....
+ThresholdImage.....
+before CV
+after CV
+Finished TCGA segmentation
+segmentation is done
