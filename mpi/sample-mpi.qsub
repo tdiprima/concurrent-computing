@@ -1,0 +1,32 @@
+#!/bin/bash
+# Run: qsub sample-mpi.qsub
+# Check: qstat -j [job_num]
+# Check qacct -j [job_num]
+
+# First, lets tell the qsub command which resources we need
+# lets start with memory (in this case I ask for 1 gigabyte)
+#$ -l mem=1G
+
+# Now we tell qsub how long we expect our work to take: 15 minutes (H:MM:SS)
+#$ -l h_rt=0:15:00
+
+# Now lets tell the system how many processors you want (8 in this case)
+#$ -pe mpi-fill 8
+
+# (What about nodes?)
+
+# This line tells SGE to start-up the job in the directory we are currently in.
+#$ -cwd
+
+# Lets output a little useful information This will put something like
+# "Starting the job at: Thu Jan 26 10:43:26 CST 2012" in your output file
+echo -n "Starting the job at: "
+date
+
+# MPI applications are run with the mpirun command. Under the scheduler it will
+# automatically determine and connect to the right processors and machines.
+mpirun ./sample-mpi
+
+# like before, this is just useful information
+echo -n "Ending the job at: "
+date
