@@ -1,4 +1,13 @@
 /*
+** This program performs parallelized matrix multiplication using OpenMP. It multiplies two matrices A and B (of size `ORDER x ORDER`), both initially filled with predefined constants `AVAL` and `BVAL` respectively. The multiplication result is stored in matrix C. 
+**
+** The matrices are not explicitly two-dimensional, but are modeled as one-dimensional arrays for which an offset is calculated to navigate through them.
+** 
+** Additionally, the program measures the time taken to perform the multiplication, as well as the MFLOPs (Million Floating-Point Operations Per Second) it achieved, and reports these statistics.
+**
+** The program also performs an error check comparing the difference between the computed values in matrix C and the expected value. If the total difference is larger than a predefined tolerance `TOL`, it reports an error.
+*/
+/*
 **  PROGRAM: Parallel Matrix Multiply (using OpenMP)
 **
 **  PURPOSE: This is a simple matrix multiply program. 

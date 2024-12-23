@@ -1,4 +1,13 @@
 /*
+This program computes the numerical value of the integral of the function 4/(1+x*x) between 0 and 1. The numerical computation of this integral results in the mathematical constant Pi. This allows the verification of the program's accuracy, as the result is expected to be close to the known value of Pi. 
+
+The operation consists of a large-numbered sequential loop performed using a specified number of steps. The process is timed using OpenMP's runtime library to calculate the time taken. The end result is the value of Pi along with the time taken to compute this value, both displayed on the console.
+
+This method of estimating Pi is known as the rectangle method or mid-point rule in numerical integration.
+
+Author: Tim Mattson, 11/99.
+*/
+/*
 
 This program will numerically compute the integral of
 

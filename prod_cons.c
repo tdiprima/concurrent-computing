@@ -1,4 +1,14 @@
 /*
+**  This program performs a straightforward producer/consumer operation with an array of random numbers.
+**  It first declares a set of constants for generating the random numbers and an array of double precision floating point numbers.
+**  The program includes two primary functions - fill_rand and Sum_array.
+**  - fill_rand function is the 'producer'. It populates the array with randomly generated numbers based on defined constants.
+**  - Sum_array function is the 'consumer'. It sums all the elements of that array.
+**  In the main function, it allocates memory for the array, captures the start time, and then calls the producer and consumer functions.
+**  After the sum is performed, it calculates the elapsed runtime, and then prints the runtime and the sum of the array elements.
+**  If run on an APPLE system, the program uses the stdlib.h library to perform memory allocation; otherwise, it uses the malloc.h library. 
+*/
+/*
 **  PROGRAM: A simple serial producer/consumer program
 **
 **  One function generates (i.e. produces) an array of random values.  

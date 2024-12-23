@@ -1,3 +1,6 @@
+/*
+This program is a parallelized implementation of the Monte Carlo simulation method to estimate the value of pi. It generates random points in a square and counts how many of those fall inside a unit circle. Since the ratio of the areas of the circle and the square approximates pi/4, the program multiplies this ratio by 4 to get an estimate of pi. It also calculates and prints the number of trials (random points generated), the estimated value of pi, and the execution time.
+*/
 
 #include <stdio.h>
 #include <omp.h>

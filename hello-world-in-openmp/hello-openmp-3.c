@@ -1,3 +1,6 @@
+// This program creates multiple threads using the OpenMP library. It then prints out a "Hello World" message 
+// from each thread, indicating the thread's number. The master thread (thread 0) alone gathers and stores 
+// the total number of threads created. Finally, all threads join the master thread and terminate.
 // https://raw.githubusercontent.com/parallella/parallella-examples/master/para-para/src/hello-openmp.c
 #include <omp.h>
 #include <stdio.h>

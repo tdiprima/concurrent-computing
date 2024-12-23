@@ -1,3 +1,10 @@
+/*
+* This code is a wrapper for the unordered_map data structure from the C++ Standard Library. 
+* It checks the version of the Standard Library and includes the relevant version of unordered_map,
+* either from the Technical Report 1 (TR1) or from C++11. 
+* If neither of these versions is available, it throws an error.
+* The unordered_map is then aliased within a nested namespace for convenience. 
+*/
 /*=========================================================================
 *
 *  Copyright Insight Software Consortium

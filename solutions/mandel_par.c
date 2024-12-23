@@ -1,4 +1,7 @@
 /*
+** SUMMARY: This code calculates the area of a Mandelbrot set, which is a mathematical set of points in the complex plane. The computation is executed in parallel using OpenMP directives. The program starts by iterating over points in a grid in the complex plane, determining whether each point is inside or outside the Mandelbrot set. A point is considered outside of the set if the result of the iteration z = z*z + c (where z and c are complex numbers) exceeds 2, or if the number of iterations reaches a maximum value (MAXITER). The ratio of the points outside the set to the total points is then used to compute the area and error of the Mandelbrot set. The results are outputted to the console.
+*/
+/*
 **  PROGRAM: Mandelbrot area (solution)
 **
 **  PURPOSE: Program to compute the area of a  Mandelbrot set.

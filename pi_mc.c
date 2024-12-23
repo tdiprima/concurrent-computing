@@ -1,4 +1,11 @@
 /*
+ This program approximates the value of PI using a Monte Carlo method. It generates random coordinates as "darts" within a square, and checks how many of these coordinates also fall within a circle inscribed in that square. The ratio of the number of "darts" that fall within the circle to the total number of "darts" thrown approximates the ratio of the areas of the circle and the square, which is pi/4. This approximation, when multiplied by 4, gives an estimate for pi. 
+
+ The radius of the circle and the side length of the square are set to 1. The number of trials (i.e., "darts thrown") is set by 'num_trials'. Random numbers for these trials are generated and signified by X and Y coordinates. If the sum of the squares of these coordinates is less than or equal to 1, the "dart" is considered to have landed inside the circle. 
+
+ The total number of "darts" that fall within the circle is divided by the total number of "darts" thrown (i.e., 'num_trials') and this ratio is multiplied by 4 to calculate the approximation of pi. The result is printed to the console. 
+*/
+/*
 
 NAME:
    Pi_mc:  PI Monte Carlo
@@ -115,9 +122,3 @@ int main ()
 
     return 0;
 }
-	  
-
-
-
-
-

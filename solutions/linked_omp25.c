@@ -1,3 +1,23 @@
+/*
+This C program is designed for parallel processing of linked lists using OpenMP.
+
+The linked list nodes are defined in the struct 'node', which includes integer data, the fibonacci sequence result corresponding to the data, and a pointer to the next node. 
+
+The program consists of the following core functions:
+
+1. 'fib': a recursive function that calculates the nth number in the Fibonacci sequence.
+2. 'processwork': a function that takes a node as input and assigns the nth Fibonacci number to 'fibdata' corresponding to 'data' in the node.
+3. 'init_list': initializes a linked list with N nodes; node data starts at FS and increment by 1 for each following node.
+
+The 'main' function first initializes a linked list and then processes each node in two different methods:
+
+- The first method processes the list in serial where each node's 'fibdata' is calculated and updated.
+- The second method in contrast, is a parallel computation. It saves pointers of all nodes in parr[] and using OpenMP's 'omp parallel' directive, divides the processing of nodes amongst multiple threads.
+
+Both computation times of serial and parallel methods are recorded and compared using 'omp_get_wtime' at beginning and end of each computation execution.
+
+Finally, the program frees the memory allocated for each node in the linked list and concludes by printing the time consumed by the parallel computation method.
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include "omp.h"

@@ -1,8 +1,17 @@
 /*
-**  PROGRAM: A simple SPMD producer/consumer program
+**  This is a simple SPMD (Single Program Multiple Data) based producer/consumer program. 
 **
-**  PURPOSE: this is just a stupid little program to play around
-**  with different ways data is shared between threads.
+**  The program uses OpenMP to create two threads. It first initializes an array of size N with random numbers 
+**  in one thread. This is referred as "producer" task. Once the array is filled, a "consumer" task begins in the other thread,
+**  which computes the sum of the array elements.
+**
+**  It applies 'flush' and 'barrier' directives to correctly synchronize the threads.
+**  'Flush' is used to ensure that the memory view of the thread is consistent with the shared memory.
+**  'Barrier' is used to synchronize all threads in a team.
+**
+**  The program prints the number of threads, the time taken for the operation and the sum of the array elements.
+**
+**  If the number of threads is not equal to 2, the program terminates with an error message. 
 **
 **  HISTORY: Written by Tim Mattson, April 2007.
 */

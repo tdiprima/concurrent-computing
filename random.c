@@ -1,3 +1,8 @@
+/* 
+This is a simple linear congruential generator for generating pseudo random numbers in a specified range. The generator is seeded with two values, the lower and upper limits of the desired range. These values are set using the 'seed' function which also ensures the lower limit is less than the higher limit, swapping values if necessary.
+
+The generator generates numbers via the 'drandom' function which produces a random number from zero to a modulus (PMOD), then scales and shifts it to sit within the previously set range. The 'drandom' function uses a multiplier and an addend in its calculation, which are set as constants at the start of the code. This generator was written by Tim Mattson and modified in 2011 to avoid collision with standard library functions. 
+*/
 
 //**********************************************************
 // Pseudo random number generator:

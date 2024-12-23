@@ -1,3 +1,19 @@
+/*
+This C/C++ code represents matrix-matrix multiplication using different methods;
+It includes a usual triple-loop method and a recursive method based on OpenMP for concurrency. 
+The program accepts optional command-line arguments to define the size of the matrices, 
+initializes three matrices with random values, 
+then applies the two different multiplication methods and compares their execution times and results.
+
+Summary of key functions:
+1. matmult1 - Performs a standard, triple-nested loop matrix-matrix multiplication.
+2. matmultleaf - Uses a simple loop to multiply a submatrix from Matrix A with a submatrix from Matrix B and stores the results in Matrix C.
+3. matmultrec - Recursive subroutine to compute the product of two submatrices from A and B and store the result in Matrix C.
+4. matmultr - Initializes matrix C and starts the recursion in matmultrec.
+5. main - Handles initialization of the matrices, calls the multiplication functions, computes execution time, checks results for consistency, and then frees up the allocated matrices.
+
+Additionally, the matrix sizes (MM, NN, PP) are defined as preprocessor directives, as well as a "GRAIN" size determining when to utilize the recursive or standard loop multiplication.
+*/
 // Several versions of serial codes for matrix-matrix multiplication
 
 #include <stdio.h>   

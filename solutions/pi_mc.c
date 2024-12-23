@@ -1,4 +1,7 @@
 /*
+This program uses a Monte Carlo algorithm to compute an estimation of PI. The algorithm is based on the idea of throwing darts randomly inside a square and counting how many of them fall inside a contained circle. The ratio of 'darts' in the circle to the total number of 'darts' should roughly equal pi/4, hence PI can be approximated by 4 times this ratio. The 'throwing of darts' is simulated using a basic linear congruential random number generator to generate coordinate pairs for the darts' locations. The result of the computation is then printed. The number of 'darts' thrown, i.e., the number of iterations or trials to run the simulation for, is set in the variable num_trials and needs to be manually updated in the file.
+*/
+/*
 
 NAME:
    Pi_mc:  PI Monte Carlo

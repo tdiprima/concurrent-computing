@@ -1,4 +1,7 @@
 /*
+**  SUMMARY: This program performs matrix multiplication of two constant matrices 'A' and 'B', and stores the product in matrix 'C'. It first allocates memory for these matrices, then initializes them. 'A' and 'B' are populated with preset constant values while 'C' is initialized with zeros. Afterwards, the multiplication process takes place and the run time is recorded. The performance in terms of million floating point operations per second (mflops) is then calculated and displayed. Finally, the program validates the multiplication by comparing the error square (errsq) with a predefined tolerance (TOL). Depending on the result, a success message or the error value is printed.
+**/
+/*
 **  PROGRAM: Matrix Multiply
 **
 **  PURPOSE: This is a simple matrix multiply program. 

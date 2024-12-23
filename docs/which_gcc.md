@@ -1,72 +1,70 @@
-## OpenMP Mac
+## Working with OpenMP on Mac OS
+
+There is a peculiarity in Mac OS where the `gcc` command is, in fact, a symlink to `Clang`. This detail becomes important when it comes to compatibility with OpenMP. Unfortunately, till recent versions, Clang did not support OpenMP.
+
+To verify your `gcc` configuration, use:
 
 ```sh
 which gcc
 # /usr/bin/gcc
-```
 
-```sh
 gcc --version
-
-# Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
-# Apple LLVM version 8.0.0 (clang-800.0.42.1)
-# Target: x86_64-apple-darwin16.1.0
-# Thread model: posix
-# InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 ```
 
-Instead, point those variables to something in `/usr/local/bin`, e.g.:
+The output reveals that by default, `gcc` points to paths located in `/usr/bin/`.
+
+However, you could point the variables to paths in `/usr/local/bin`. Use the `export` command to achieve this as shown below:
 
 ```sh
 export CC=/usr/local/bin/gcc
 ```
 
-and similarly for the other two variables.
+Apply similar changes for other variables as well.
 
+Happily, newer versions of `Clang` do support OpenMP as per an article on the [llvm blog](http://blog.llvm.org/2015/05/openmp-support_22.html). This post also provides instructions on setting it up.
 
-On a mac, the command `gcc` is a symlink to `Clang`.
+But suppose you prefer using `gcc`, the following steps can guide you:
 
-So by calling
+1. Install `gcc` with brew as follows:
+  
+   ```sh
+   brew install gcc --without-multilib
+   ```
+   If brew informs you that `gcc` is already installed, try reinstalling it:
 
-```sh
-gcc -fopenmp -o Parallel.b Parallel.c
-```
+   ```sh
+   brew reinstall gcc --without-multilib
+   ```
 
-you are in fact using Clang, which until now has not had built-in support for OpenMP.
+   Without the flag `--without-multilib`, brew will warn you about potential incompatibilities with OpenMP.
 
-The newer versions of Clang do have support for OpenMP according to [this post](http://blog.llvm.org/2015/05/openmp-support_22.html) (where you can also find instructions on how to set it up).
+2. Find the location of the newly installed `gcc`. For instance, if `gcc` is installed with version appended, you will find the symlink like `/usr/local/bin/gcc-5` to avoid conflict with the one installed by Command Line Tools.
 
-On the other hand, if you still want to use `gcc`, I can guide you through the steps that worked for me.
+3. Let your system know about the new `gcc` location. You can accomplish this by adding the directory to your `$PATH` variable:
 
-1) Install gcc with brew. The command you used should work (it did for me one hour ago):
+   ```sh
+   PATH=/usr/local/bin:$PATH
+   ```
 
-```sh
-brew install gcc --without-multilib
-```
-Alternatively, if brew says that you already have gcc installed, you can try
+4. You should now be able to compile with OpenMP enabled, using a command similar to:
 
-```sh
-brew reinstall gcc --without-multilib
-```
-As you may have noted, if you don't specify `--without-multilib`, brew warns you that OpenMP may not work.
+   ```sh
+   gcc-5 -fopenmp -o Parallel Parallel.c
+   ```
 
-2) Find the location of the newly installed gcc. Note that brew appends the version number to gcc so that it does not conflict with the one installed by Command Line Tools. You will find the symlink in `/usr/local/bin`. In my case, it's `/usr/local/bin/gcc-5`. If you right-click and chose "Show original" it should show the gcc-5 executable in `/usr/local/Cellar/gcc/5.3.0/bin/gcc-5` (version numbers may differ).
-3) Now you need to tell your system about it. Note that when calling a compiler, your bash will look into `/usr/bin` by default and not in `/usr/local/bin`. You need to add this directory to your `$PATH`. This can be easily done with the command: `PATH=/usr/local/bin:$PATH`.
+   Note that `gcc-5` is just an example; replace `5` with whichever version you have installed.
 
-4) Now you should be able to compile with OpenMP enabled using:
+To compile using cmake, you can use the example commands:
 
-```sh
-gcc-5 -fopenmp -o Parallel Parallel.c
-```
-Remark: gcc-5 is the version I have installed, yours might differ.
+   ```sh
+   brew install cmake
+   brew install gcc --without-multilib
+   cmake -DCMAKE_CXX_COMPILER=g++-6 ..
+   make -j
+   ```
 
-```sh
-brew install cmake
-brew install gcc --without-multilib
-cmake -DCMAKE_CXX_COMPILER=g++-6 ..
-make -j
-```
+That's it! These instructions should get OpenMP on Mac OS functioning correctly.
 
-It works for me!
+Additional information can be found [here](http://blog.llvm.org/2015/05/openmp-support_22.html).
 
-http://blog.llvm.org/2015/05/openmp-support_22.html
+<br>

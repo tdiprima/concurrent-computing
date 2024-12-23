@@ -1,4 +1,7 @@
 /*
+This program calculates the numerical value of the integral of function 4/(1+x*x) from 0 to 1, which is equivalent to the value of pi. It performs this calculation with varying numbers of parallel threads, from 1 to 4, by dividing iterations of the loop among the threads. In each iteration, it calculates the summation of function 4/(1+x*x) and then multiplies the sum  by the step size to get the pi value. It uses the OpenMP library for parallel computing, wherein the number of threads and the time are reported for each subset of threads used. The program also prints out the runtime for each set of threads. Originally written by Tim Mattson in 1999, this parallelization of the computation allows for faster processing with the use of multiple CPU threads.
+*/
+/*
 
 This program will numerically compute the integral of
 

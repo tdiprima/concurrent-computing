@@ -1,3 +1,12 @@
+/*
+This code creates a linked list with N nodes using OpenMP (Open Multi-Processing), where N is a predefined macro with a value of 5 and each node contains an integer (data) and its corresponding Fibonacci value (fibdata). The integer values start from another predefined macro, FS, which has a value of 38, and are incremented sequentially for each node in the list.
+
+The main function initializes the list and measure the time it takes to process all nodes. Processing includes calculating the Fibonacci number of the data in each node (by calling the processwork function which uses fib function).
+
+After processing, it prints data and fibdata for each node, while freeing (deallocating) the memory used by each node in the process. Finally, the total compute time is printed.
+
+Note: OpenMP is a parallel programming model for shared-memory multi-processor systems, but in this code, parallelism is not explicitly utilized.
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <omp.h>
@@ -90,4 +99,3 @@ int main(int argc, char *argv[]) {
 
      return 0;
 }
-

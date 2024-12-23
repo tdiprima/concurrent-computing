@@ -1,3 +1,12 @@
+/*
+This code defines and implements a Parallel Pseudo Random Number Generator. It makes use of the OpenMP parallel region and the Leap Frog method to ensure the generation of non-overlapping sequences for each thread. The generator is initially seeded with a range, which is specified using a seed function.
+
+The seed function also adjusts the multiplier and seeds to establish suitable initial conditions for various threads. The drandom function then generates a stream of random numbers within the defined preset range for every subsequent call.
+
+The key elements used in the generation process are a modulus of 2^31-1 and a multiplier obtained from the Hoaglin Linear Congruential Generators (LCG). The addend is set to zero for simplicity.
+
+The generator is designed to avoid false sharing and optimized to function within a multi-threaded environment to fit into cache-line size.
+*/
 
 //**********************************************************
 // Parallel Pseudo random number generator:
@@ -109,4 +118,3 @@ void seed(double low_in, double hi_in)
    }
    random_last = (unsigned long long) pseed[id][0];
 }
-

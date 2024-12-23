@@ -1,3 +1,12 @@
+/*
+This script implements a simple linear congruential pseudo-random number generator (LCG). The LCG uses defined constant values (such as a multiplier, addend, and modulus) to generate a sequence of random integers within a specified range. 
+
+The script defines two functions: 
+
+1. `drandom()`: This function calculates the next random number in the sequence using previously defined constants and the last generated random number. It then scales this number to the pre-established range and returns it.
+
+2. `seed(double low_in, double hi_in)`: This function takes two inputs representing the lower and upper bounds for the desired randomness range. It sets the range such that the lower input is assigned to `random_low` and the higher input is assigned to `random_hi`. If the inputs are provided in reverse order, the function correctly swaps them. It then seeds the random number generator by initializing `random_last` with a calculated value.
+*/
 
 //**********************************************************
 // Pseudo random number generator:
@@ -71,4 +80,3 @@ void seed(double low_in, double hi_in)
 //**********************************************************
 // end of pseudo random generator code.
 //**********************************************************
-

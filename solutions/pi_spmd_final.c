@@ -1,4 +1,7 @@
 /*
+This program computes the numerical integral of the equation 4/(1+x*x) from 0 to 1, the result of which is an approximation of Pi. The computation is parallelized with OpenMP (Open Multi-Processing) using an SPMD (Single Program, Multiple Data) algorithm. The number of threads, i.e., parallel computation tasks, is set to 4 at maximum. The process involves splitting the calculations into parts across different threads, each thread computes a partial sum of a subset of steps. At the end, the partial sums are added together to make a final sum, which is then multiplied by a step size to compute Pi. The program also measures and outputs the computation performance, by printing out the calculated Pi, computation time, and the number of threads used.
+*/
+/*
 
 NAME:   PI SPMD final version without false sharing
 

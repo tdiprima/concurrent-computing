@@ -1,50 +1,41 @@
-## Hands-on OpenMP course
+## OpenMP Practical Guide
 
-This directory contains exercises and solutions for a hands-on
-OpenMP course.  Information about these programs can be found
-in the comments and in the slides from the course.
+The following collection includes diverse practical exercises and their corresponding solutions relevant to an OpenMP course. In-depth details about these projects are presented within the comments and the course's slide deck.
 
-To use these programs, copy the appropriate `def` file into
-`make.def`.  For example:
+To utilize these application programs, simply copy the appropriate `def` file into `make.def` as follows:
 
 ```sh
 cp def_files/apple.def ./make.def
 ```
 
-Then build the programs and test them
+Subsequently, construct and verify the programs like so:
 
 ```sh
 make test
 ```
 
-### Solutions
+### Implementing Solutions
 
-The solutions directory uses the same `make.def` file so to build
-the solutions, just type `make test`.  The directory extras
-contains additional exercises for more advanced students.  These
-have not been as carefully tested and may have problems building
-and running on some systems.
+To build the solution files, duplicate the process above using the `make.def` file. The additional exercises hosted in the 'extras' directory cater to individuals seeking more advanced content. Please note that these have undergone less rigorous testing and could encounter issues during construction or operation on certain environments.
 
-### Works with...
+### Compatibility
 
-We have tested these programs under Linux with the gnu and Intel compilers,
-and Windows 7 with the intel compiler. We also tested these
-on OS-X with the gnu environment loaded with Apple's xcode.   Apple's
-OpenMP environment at this time does not support threadprivate
-variables so the pi_mc solutions will not build (and needs to 
-be commented out from the makefile).
+These application programs have been successfully tested in environments such as Linux with GNU and Intel compilers, as well as Windows 7 with the Intel compiler. Additionally, tests have been performed on OS-X with an Apple XCode-loaded GNU environment. However, it should be noted that since Apple's OpenMP environment currently lacks threadprivate variable support, `pi_mc` solutions cannot be built and thus, must be exempted from the makefile.
 
-We have used these programs with the PGI compiler (pgi.def) 
-but we have not tested this case recently and it may need some work.
+Although these programs function with the PGI compiler (pgi.def), they haven't been tested recently, which might call for some refinements.
 
-### For Windows users
+### Guide for Windows Users
 
-For Windows users, to run these on Windows 7 we used the following
-procedure.  First go to the start menu, and select 
+For users operating within a Windows 7 environment, execute the following procedure:
+
+1. Initiate by navigating to Start Menu. Select:
 
 ```   
-INtel parallel studio 2011/command prompt/ ia64 visual studio 2010 mode
+Intel Parallel Studio 2011/command prompt/ ia64 Visual Studio 2010 mode
 ```
 
-`cd` to the appropriate folder.  Copy `win_intel.def` to `make.def` and then use `nmake` to build
+2. `cd` to the destination folder.
+3. Copy `win_intel.def` to `make.def`.
+4. Utilize `nmake` to compose.
 
+<br>

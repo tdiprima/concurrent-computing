@@ -1,6 +1,0 @@
-ITK_DIR                          /home/tkurc/programs/InsightToolkit-4.9.1/build
-NSCALE_BUILD_DIR                 /home/tdiprima/work/nscale-build
-NSCALE_SRC_DIR                   /home/tdiprima/work/nscale/src
-OpenSlide_INSTALLATION_PATH	 /home/yigao/usr/local
-OpenCV_CONFIG_PATH               /home/tkurc/programs/opencv-249/share/OpenCV
-

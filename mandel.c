@@ -1,4 +1,14 @@
 /*
+** SUMMARY: This program calculates the area of the Mandelbrot set, an iconic fractal, by looping over 
+** a grid of points in the complex plane that contains the Mandelbrot set, and testing each point to 
+** determine whether it is inside or outside of the set. The algorithm utilized for the task is the 
+** z=z*z+c iteration, stopping as either the absolute value of z becomes greater than 2 (indicating 
+** the point is outside the set) or the iteration count reaches a defined maximum (suggesting the point 
+** is within the set). Upon completion, the program computes the area of the set and an error estimate, 
+** then outputs the results to the console. It's important to note that computations are performed 
+** in parallel, leveraging the OpenMP API.
+*/
+/*
 **  PROGRAM: Mandelbrot area
 **
 **  PURPOSE: Program to compute the area of a  Mandelbrot set.
@@ -78,4 +88,3 @@ void testpoint(void){
        }
 
 }
-

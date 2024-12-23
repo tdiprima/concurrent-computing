@@ -1,4 +1,7 @@
 /*
+This C program calculates the numerical value of the integral of the function 4/(1+x*x) from 0 to 1, whose result approximates the mathematical constant pi. The computation is parallelized using OpenMP by distributing the calculation among different threads. The number of threads, which ranges from 1 to MAX_THREADS, is controlled by the main for-loop. Each thread computes its portion of the sum with a cyclic distribution that increments based on thread ID, with results stored in local sum arrays. These thread-specific sums are then accumulated to provide the final value of pi. The program also measures and displays the time taken for computation. However, it is noted that because neighboring array elements share cache lines, false sharing may occur leading to inefficient cache use and thus lower performance.
+*/
+/*
 
 NAME: PI SPMD ... a simple version.
 
