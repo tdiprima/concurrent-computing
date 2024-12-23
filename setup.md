@@ -2,11 +2,6 @@
 
 This repository contains multiple C and C++ files utilizing OpenMP for parallel programming. The setup includes a Docker container with all required tools to compile and run these files.
 
-## Prerequisites
-
-- Docker installed on your system.
-- Basic familiarity with terminal commands.
-
 ## Setting Up the Docker Container
 
 1. Build the Docker image:
@@ -22,22 +17,6 @@ This repository contains multiple C and C++ files utilizing OpenMP for parallel 
    ```
 
    The `-v $(pwd):/usr/src/app` flag mounts the current directory into the container so that changes persist.
-
-## Compiling the Files
-
-Inside the container:
-
-1. Compile all source files using the Makefile:
-
-   ```bash
-   make
-   ```
-
-2. To clean compiled files:
-
-   ```bash
-   make clean
-   ```
 
 ## Running the Executables
 
@@ -61,13 +40,5 @@ OpenMP is enabled by the `-fopenmp` flag in the compilation settings. Ensure tha
 
 - Edit the source files on your host system, and they will be reflected inside the container due to the mounted volume.
 - Make sure to add new `.c` or `.cpp` files in the repository and rerun `make` to compile them.
-
-Enjoy experimenting with OpenMP and Docker!
-```
-
-### Verification Steps
-- Place all `.c` and `.cpp` files in the same directory as the Dockerfile and Makefile.
-- Build and run the container using the instructions provided.
-- Ensure the Makefile compiles all source files correctly, and executables run without errors.
 
 <br>

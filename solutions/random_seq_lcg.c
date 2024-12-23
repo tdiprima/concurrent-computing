@@ -36,10 +36,12 @@ The script defines two functions:
 // History: 
 //      Written by Tim Mattson, 9/2007.
 
-static long MULTIPLIER  = 1366;
-static long ADDEND      = 150889;
-static long PMOD        = 714025;
-long random_last = 0.0;
+#include "random_seq_lcg.h"
+
+long MULTIPLIER  = 1366;
+long ADDEND      = 150889;
+long PMOD        = 714025;
+long random_last = 0;
 double random_low, random_hi;
 
 double drandom()
