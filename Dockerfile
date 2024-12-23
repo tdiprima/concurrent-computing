@@ -2,7 +2,7 @@
 FROM ubuntu:22.04
 
 # Set the maintainer
-LABEL maintainer="Your Name <your_email@example.com>"
+LABEL maintainer="Tammy DiPrima <tammy.diprima@stonybrook.edu>"
 
 # Update the package manager and install necessary tools
 RUN apt-get update && apt-get install -y \
