@@ -7,16 +7,37 @@ This repository contains multiple C and C++ files utilizing OpenMP for parallel 
 1. Build the Docker image:
 
    ```sh
-   docker build -t openmp-c-container .
+   docker build -t openmp-c-mpi-container .
    ```
+   
+   It will automatically compile the c and cpp files.
 
 2. Run the container interactively:
 
    ```sh
-   docker run --rm -it -v $(pwd):/usr/src/app openmp-c-container bash
+   docker run --rm -it -v $(pwd):/usr/src/app openmp-c-mpi-container bash
    ```
 
    The `-v $(pwd):/usr/src/app` flag mounts the current directory into the container so that changes persist.
+
+<!--## Compiling the Files
+
+The files in the main folder will be compiled automatically.
+
+Optional: Inside the container's subfolders:
+
+1. Compile all source files using the Makefile:
+
+   ```bash
+   make
+   ```
+
+2. To clean compiled files:
+
+   ```bash
+   make clean
+   ```
+-->
 
 ## Running the Executables
 
@@ -41,4 +62,14 @@ OpenMP is enabled by the `-fopenmp` flag in the compilation settings. Ensure tha
 - Edit the source files on your host system, and they will be reflected inside the container due to the mounted volume.
 - Make sure to add new `.c` or `.cpp` files in the repository and rerun `make` to compile them.
 
+<!--
+- If you run `compile_and_clean.sh compile` in the container and it doesn't work, do:
+
+   ```sh
+   apt-get update
+   apt-get install -y openmpi-bin libopenmpi-dev
+   ```
+   
+   Even though it should have installed already during the build.
+-->
 <br>

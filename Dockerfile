@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libopenmpi-dev \
     make \
     findutils \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container

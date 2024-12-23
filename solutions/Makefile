@@ -21,8 +21,8 @@ pi_spmd_final$(EXE): pi_spmd_final.$(OBJ)
 pi_loop$(EXE): pi_loop.$(OBJ) 
 	$(CLINKER) $(OPTFLAGS) -o pi_loop pi_loop.$(OBJ) $(LIBS)
 
-pi_mc$(EXE): pi_mc.$(OBJ)
-	$(CLINKER) $(OPTFLAGS) -o pi_mc pi_mc.$(OBJ) $(LIBS)
+pi_mc$(EXE): pi_mc.$(OBJ) random_seq_lcg.$(OBJ)
+	$(CLINKER) $(OPTFLAGS) -o pi_mc pi_mc.$(OBJ) random_seq_lcg.$(OBJ) $(LIBS)
 
 pi_mc_par$(EXE): pi_mc_par.$(OBJ) random_par.$(OBJ) 
 	$(CLINKER) $(OPTFLAGS) -o pi_mc_par pi_mc_par.$(OBJ) random_par.$(OBJ) $(LIBS)

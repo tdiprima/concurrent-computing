@@ -1,0 +1,18 @@
+# C compiler and flags
+CC=gcc
+CFLAGS=-fopenmp -O3 -Wall
+
+# Linker
+CLINKER=$(CC)
+OPTFLAGS=-fopenmp
+
+# Libraries
+LIBS=-lm
+
+# File extensions
+EXE=
+OBJ=o
+
+# Utilities
+RM=rm -f
+PRE=./
