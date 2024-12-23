@@ -23,8 +23,10 @@ compile() {
             rm -f random_seq_lcg.o
         elif [[ $file == *.c ]]; then
             mpicc -fopenmp -Wall -O2 -o "$output" "$file" || { echo "Failed to compile $file"; exit 1; }
+            # gcc -fopenmp -Wall -O2 -o "$output" "$file" || { echo "Failed to compile $file"; exit 1; }
         elif [[ $file == *.cpp ]]; then
             mpic++ -fopenmp -Wall -O2 -o "$output" "$file" || { echo "Failed to compile $file"; exit 1; }
+            # g++ -fopenmp -Wall -O2 -o "$output" "$file" || { echo "Failed to compile $file"; exit 1; }
         fi
         echo "Compiled $file -> $output"
     done
