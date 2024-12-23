@@ -2,7 +2,9 @@
 
 Nov 7, 2011
 
-Topics: C++, OpenMP, Parallel Computing 
+Topics: C++, OpenMP, Parallel Computing
+
+Code credits are included in the header comments of each file. Additional summary comments have been added above them to provide an overview of the file's functionality.
 
 ### Engaging Lecture on Parallel Computing. Don't Forget Your Popcorn, It's A 2-Hour Ride!
 
