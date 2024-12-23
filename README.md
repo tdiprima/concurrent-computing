@@ -1,6 +1,6 @@
-## Parallel Lines
+## Concurrent Computing
 
-Posted on Nov 7, 2011
+Nov 7, 2011
 
 Topics: C++, OpenMP, Parallel Computing 
 
