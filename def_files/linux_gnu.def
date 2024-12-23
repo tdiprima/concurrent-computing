@@ -1,3 +1,8 @@
+# This is a makefile script for a C++ project that uses the g++ compiler on a Linux system.
+# The script specifies the compiler, linker, flags, libraries, and other settings used in the build process.
+# The "-fopenmp" option is for enabling OpenMP support, which allows for parallel programming.
+# The "-lm" option links the math library.
+# The project uses object (".o") files and executable files, and "rm" command is used for removing files.
 # for g++ compiler on Linux
 # copy to make.def
 CC          = g++

@@ -1,3 +1,7 @@
+# This code defines the compiler, linker, optimization flags, libraries and other settings for a Makefile.
+# The chosen compiler is gcc, and the openmp flag sets it to use OpenMP support. 
+# It also specifies an Apple-specific flag. The math library is being linked, and there's a declaration for 
+# object and executable file extensions along with the command for file removal.
 # for g++ compiler on Apple OS-X
 # copy to make.def
 # CC          = g++

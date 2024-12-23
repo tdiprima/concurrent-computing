@@ -1,3 +1,7 @@
+# This script is a makefile configuration for a Windows environment using the Intel compiler.
+# It sets compiler variables, optimization flags for OpenMP (enabling parallel computing), 
+# defines no specific libraries, and configures variables for object files, executable files, 
+# and the command to delete files.
 # for Intel compiler on windows
 # copy to make.def
 CC          = icl

@@ -1,3 +1,7 @@
+# This script sets up environment variables for a C++ project.
+# It's configured for the Intel compiler on Linux and uses OpenMP for parallel computing.
+# The compiler commands for C++ are defined, along with optimization flags.
+# It also specifies the linker to be used, any associated libraries, preprocessor and object file settings, and the command for file removal (cleanup).
 # for intel compiler on linux (most exercises work with icc as well)
 # copy to make.def
 CC         = icpc
@@ -12,4 +16,3 @@ PRE= ./
 OBJ=o
 EXE=
 RM=rm
-
