@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: concurrent_computing
+    container_name: concurrent-computing
+    stdin_open: true # Keep the container open for interactive tools like Vim
+    tty: true        # Enable terminal interaction
+    command: ["bash"]
+    volumes:
+      - ./app:/usr/src/app # Mount the app directory to work on files locally
+
