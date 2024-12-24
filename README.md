@@ -1,33 +1,15 @@
-## Concurrent Computing
+## C and C++ Code Collection
 
-Code credits are included in the header comments of each file. Additional summary comments have been added above them to provide an overview of the file's functionality.
+This repository contains a collection of C, C++, and header (`.h`) files borrowed from various sources. Efforts have been made to include proper credit in the header comments of each file.
 
-### Engaging Lecture on Parallel Computing. Don't Forget Your Popcorn, It's A 2-Hour Ride!
+### Modifications
+- I have added summary comments at the top of each file to provide an overview of its functionality. These changes were made to enhance clarity and usability.
+- The code has been Dockerized to create a portable and consistent environment for compiling and running these files. The Docker setup and associated scripts are my original work.
 
-Watch the insightful session on Shared Memory Programming with OpenMP & More About OpenMP [here](https://youtu.be/fn2VAUSw6cI)
+### Acknowledgments
+- If you recognize any code that is missing proper attribution, please let me know. This collection was originally assembled around 2011, and some credits may have been unintentionally omitted. I sincerely apologize for any oversight.
 
-### Learning Made Fun With This OpenMP Tutorial!
-
-Check out the beginner-friendly guide, "Introduction to OpenMP - Tim Mattson (Intel)" [here](https://www.youtube.com/playlist?list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG)
-
-For more related resources, visit [this link](http://www.openmp.org/resources/tutorials-articles/)
-
-Here is a step-by-step guide to install gcc without multilib and locate the executable:
-
-```sh
-brew install gcc --without-multilib
-cd /usr/local/Cellar/gcc
-ls
-cd 6.2.0/bin/
-# Locate the executable here: gcc-6
-```
-
-To setup the libomp library, use these export commands:
-
-```sh
-# Get information about libomp using: brew info libomp (OMP)
-export LDFLAGS="-L/usr/local/opt/libomp/lib"
-export CPPFLAGS="-I/usr/local/opt/libomp/include"
-```
-
-<br>
+### Purpose
+- This repository serves as a reference and resource for programming projects.
+- Use the Dockerized environment to compile and run the code easily.
+- Feel free to explore, use, or learn from the code, but please respect the original authors and contributors.
